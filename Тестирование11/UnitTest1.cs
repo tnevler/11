@@ -10,21 +10,29 @@ namespace Тестирование11
         [TestMethod]
         public void TestMethod1()
         {
-            string a = "01110001";
-            string result = "00110110";
+            char[] a = { '0', '1', '1', '1', '0', '0', '0', '1' };
+            string result1 = "00110110";
+            string result2 = "01110001";
             char[] b = Program.Coding(a);
+            char[] c = Program.Transcription(b);
             string b1 = string.Concat(b);
-            Assert.AreEqual(result, b1);
+            string c1 = string.Concat(c);
+            Assert.AreEqual(result1, b1);
+            Assert.AreEqual(result2, c1);
         }
 
         [TestMethod]
         public void TestMethod2()
         {
-            string a = ".---...-";
-            string result = "..--.--.";
+            char[] a = { '.', '-', '-', '-', '.', '.', '.', '-' };
+            string result1 = "..--.--.";
+            string result2 = ".---...-";
             char[] b = Program.Coding(a);
+            char[] c = Program.Transcription(b);
             string b1 = string.Concat(b);
-            Assert.AreEqual(result, b1);
+            string c1 = string.Concat(c);
+            Assert.AreEqual(result1, b1);
+            Assert.AreEqual(result2, c1);
         }
     }
 }
